@@ -83,7 +83,7 @@
                      <webModule>
                         <groupId>com.example</groupId>
                         <artifactId>module-web</artifactId>
-                        <contextRoot>/</contextRoot>
+                        <contextRoot>/javaweb</contextRoot>
                      </webModule>
                   </modules>
                </configuration>
