@@ -1,0 +1,1 @@
+docker image build -t custom_jboss_eap_64:2 . ; docker image ls
