@@ -19,7 +19,7 @@ public class TrackingController {
     SlowStore.saveVisit(visitInformation);
 
     long stopTime = System.currentTimeMillis();
-    System.out.println("tracking took " + (stopTime - startTime));
+    logger.info("tracking took " + (stopTime - startTime));
 
     return context.proceed();
   }
