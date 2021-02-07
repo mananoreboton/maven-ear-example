@@ -31,16 +31,14 @@ public class MemberResourceRESTService {
   @Consumes({JSON_MIME_TYPE})
   @Produces({JSON_MIME_TYPE})
   public Boolean updateUser(UpdateUserRequest updateUserRequest, @HeaderParam("visitInformation") String visitInformation) {
-    userController.updateUser(updateUserRequest, visitInformation);
-    return false;
+    return userController.updateUser(updateUserRequest, visitInformation);
   }
 
   @PUT
-  @Path("/updateUser")
+  @Path("/updateUserAsync")
   @Consumes({JSON_MIME_TYPE})
   @Produces({JSON_MIME_TYPE})
   public Boolean updateUserAsync(UpdateUserRequest updateUserRequest, @HeaderParam("visitInformation") String visitInformation) {
-    userController.updateUserAsync(updateUserRequest, visitInformation);
-    return true;
+    return userController.updateUserAsync(updateUserRequest, visitInformation);
   }
 }
