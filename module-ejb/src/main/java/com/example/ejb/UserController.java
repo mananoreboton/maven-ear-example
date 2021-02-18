@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.ejb;
 
 import com.example.request.UpdateUserRequest;
 import org.apache.log4j.Logger;

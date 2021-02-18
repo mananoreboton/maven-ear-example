@@ -1,16 +1,16 @@
 package com.example.rest;
 
 import com.example.request.UpdateUserRequest;
-import com.example.service.AsyncTrackingController;
-import com.example.service.TrackingController;
-import com.example.service.UserController;
+import com.example.cdi.AsyncTrackingInterceptor;
+import com.example.cdi.TrackingInterceptor;
+import com.example.ejb.UserController;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.interceptor.Interceptors;
 
 @RequestScoped
-public class MemberResourceRESTService implements UserService {
+public class UserServiceImpl implements UserService {
 
   @EJB
   UserController userController;
@@ -21,13 +21,13 @@ public class MemberResourceRESTService implements UserService {
   }
 
   @Override
-  @Interceptors({TrackingController.class})
+  @Interceptors({TrackingInterceptor.class})
   public Boolean updateUser(UpdateUserRequest updateUserRequest, String visitInformation) {
     return userController.updateUser(updateUserRequest, visitInformation);
   }
 
   @Override
-  @Interceptors({AsyncTrackingController.class})
+  @Interceptors({AsyncTrackingInterceptor.class})
   public Boolean updateUserAsync(UpdateUserRequest updateUserRequest, String visitInformation) {
     return userController.updateUserAsync(updateUserRequest, visitInformation);
   }
